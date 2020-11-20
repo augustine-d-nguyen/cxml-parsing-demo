@@ -1,0 +1,13 @@
+# Getting Started
+
+### Environment
+* OpenJDK 1.8.0_265
+* Maven 3.6.3
+
+### Configurations
+* Change package of generated classes in xjb file
+
+### Commands
+* Generate jaxb mapping classes for cXML.dtd: **mvn clean jaxb2:xjc -Pcxml**
+* Generate jaxb mapping classes for Fulfill.dtd: **mvn clean jaxb2:xjc -Pfulfill**
+
