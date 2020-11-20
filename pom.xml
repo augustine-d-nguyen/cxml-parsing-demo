@@ -50,6 +50,34 @@
                 <jaxb.source>src/main/resources/schema/1.2.048/dtds/cXML.dtd</jaxb.source>
                 <jaxb.xjbSource>src/main/resources/schema/1.2.048/xjbs/cXML.xjb</jaxb.xjbSource>
             </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>jaxb2-maven-plugin</artifactId>
+                        <version>2.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>xjc</id>
+                                <goals>
+                                    <goal>xjc</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <sourceType>dtd</sourceType>
+                            <sources>
+                                <source>${jaxb.source}</source>
+                            </sources>
+                            <xjbSources>
+                                <xjbSource>${jaxb.xjbSource}</xjbSource>
+                            </xjbSources>
+                            <externalEntityProcessing>true</externalEntityProcessing>
+                            <!-- <clearOutputDir>false</clearOutputDir> -->
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
         <profile>
             <id>fulfill</id>
@@ -57,6 +85,34 @@
                 <jaxb.source>src/main/resources/schema/1.2.048/dtds/Fulfill.dtd</jaxb.source>
                 <jaxb.xjbSource>src/main/resources/schema/1.2.048/xjbs/Fulfill.xjb</jaxb.xjbSource>
             </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>jaxb2-maven-plugin</artifactId>
+                        <version>2.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>xjc</id>
+                                <goals>
+                                    <goal>xjc</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <sourceType>dtd</sourceType>
+                            <sources>
+                                <source>${jaxb.source}</source>
+                            </sources>
+                            <xjbSources>
+                                <xjbSource>${jaxb.xjbSource}</xjbSource>
+                            </xjbSources>
+                            <externalEntityProcessing>true</externalEntityProcessing>
+                            <!-- <clearOutputDir>false</clearOutputDir> -->
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
     <build>
@@ -65,31 +121,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>jaxb2-maven-plugin</artifactId>
-                <version>2.5.0</version>
-                <executions>
-                    <execution>
-                        <id>xjc</id>
-                        <goals>
-                            <goal>xjc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <sourceType>dtd</sourceType>
-                    <sources>
-                        <source>${jaxb.source}</source>
-                    </sources>
-                    <xjbSources>
-                        <xjbSource>${jaxb.xjbSource}</xjbSource>
-                    </xjbSources>
-                    <externalEntityProcessing>true</externalEntityProcessing>
-                    <!-- <clearOutputDir>false</clearOutputDir> -->
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-
 </project>
