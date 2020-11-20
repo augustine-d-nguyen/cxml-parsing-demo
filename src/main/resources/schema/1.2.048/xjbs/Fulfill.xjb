@@ -1,0 +1,15 @@
+<xml-java-binding-schema xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc">
+    <options package="com.tinyolo.cxml.parsing.demo.jaxb.fulfill" />
+    <element name="ReturnData" type="class">
+        <attribute name="name" property="attName" />
+    </element>
+    <element name="ShippingPaymentMethod" type="class">
+        <attribute name="value" property="attValue" />
+    </element>
+    <element name="TermsOfDeliveryCode" type="class">
+        <attribute name="value" property="attValue" />
+    </element>
+    <element name="TransportTerms" type="class">
+        <attribute name="value" property="attValue" />
+    </element>
+</xml-java-binding-schema>
